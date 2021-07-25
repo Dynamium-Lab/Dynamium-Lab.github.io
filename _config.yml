@@ -6,8 +6,10 @@ author:
 minima:
   social_links:
     github: dynamium-lab
-  header_pages:
-    - about.md
   skin: dark
+  
+header_pages:
+  - about.md
+  
 
 theme: minima
