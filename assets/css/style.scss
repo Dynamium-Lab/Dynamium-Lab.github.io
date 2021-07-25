@@ -8,9 +8,11 @@
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
-.site-nav {
-    position: absolute;
+.trigger {
     top:50%;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
+}
+.body {
+    background-color: aliceblue;
 }
