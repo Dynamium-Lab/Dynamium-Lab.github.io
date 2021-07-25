@@ -3,3 +3,14 @@
 
 @import "minima/skins/{{ site.minima.skin | default: 'classic' }}";
 @import "minima/initialize";
+
+.site-title {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.site-nav {
+    position: absolute;
+    top:50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}

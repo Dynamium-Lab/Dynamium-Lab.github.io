@@ -4,7 +4,7 @@ author:
   name: Andre Gallant
 
 minima:
-  skin: dark
+  skin: classic
   
 header_pages:
   - about.md

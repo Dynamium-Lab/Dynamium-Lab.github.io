@@ -1,1 +1,9 @@
 // Placeholder to allow overriding predefined variables smoothly.
+
+$content-width:    1000px !default;
+
+$on-palm:          600px !default;
+$on-laptop:        1000px !default;
+
+$on-medium:        $on-palm !default;
+$on-large:         $on-laptop !default;
