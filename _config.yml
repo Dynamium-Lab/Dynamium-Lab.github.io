@@ -1,4 +1,3 @@
-theme: minima
 title: Dynamium
 
 author:
@@ -10,3 +9,5 @@ minima:
   header_pages:
     - about.md
   skin: dark
+
+theme: minima
