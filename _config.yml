@@ -7,3 +7,5 @@ author:
 minima:
   social_links:
     github: dynamium-lab
+  header_pages:
+  - about.md
