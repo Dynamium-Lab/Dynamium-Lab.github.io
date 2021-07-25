@@ -1,9 +1,6 @@
 theme: minima
 title: Dynamium
 
-header_pages:
-  - about.md
-
 author:
   name: Andre Gallant
 
