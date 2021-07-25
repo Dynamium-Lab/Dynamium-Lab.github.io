@@ -1,2 +1,12 @@
 theme: minima
 title: Dynamium
+
+header_pages:
+  - about.md
+
+author:
+  name: Andre Gallant
+
+minima:
+  social_links:
+    github: dynamium-lab
