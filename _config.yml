@@ -4,8 +4,6 @@ author:
   name: Andre Gallant
 
 minima:
-  social_links:
-    github: dynamium-lab
   skin: dark
   
 header_pages:
