@@ -8,5 +8,7 @@ minima:
   
 header_pages:
   - about.md
+  - members.md
+  - publications.md
   
 theme: minima
