@@ -1,15 +1,14 @@
 ---
-title: Members
-lang: en
+title: Membres
+lang: fr
 ---
 
-## Professors
+## Professeurs
  - André Gallant (director)
  - Marise Gallant
  - Nancy Black
  - Roger Boudreau
 
-## Graduate Students
+## Cycles supérieurs
 
-
-## Undergraduate Students
+## Premier cycle
