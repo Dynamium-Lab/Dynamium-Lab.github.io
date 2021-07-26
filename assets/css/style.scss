@@ -9,12 +9,13 @@
     margin-bottom: 1rem;
 }
 .trigger {
+    position: absolute;
     top:50%;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
 }
 .site-header {
-    background-color: blue;
+    background-color: grey;
 }
 .page-content {
     background-color: aliceblue;
