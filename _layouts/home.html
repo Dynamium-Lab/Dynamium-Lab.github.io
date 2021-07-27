@@ -10,17 +10,22 @@ layout: default
   {{ content }}
 
 
-  {% if site.paginate %}
-    {% assign posts = paginator.posts %}
+  {% if page.lang == 'fr' %}
+    {% assign lang = 'fr' %}
+    {% assign news_title = 'Nouvelles' %}
   {% else %}
-    {% assign posts = site.posts %}
+    {% assign lang = 'en' %}
+    {% assign news_title = 'News' %}
+  {% endif %}
+  
+  {% if site.paginate %}
+    {% assign posts = paginator.posts | where: "content_type", "news" | where:"lang", lang %}
+  {% else %}
+    {% assign posts = site.posts | where: "content_type", "news" | where:"lang", lang %}
   {% endif %}
 
-
   {%- if posts.size > 0 -%}
-    {%- if page.list_title -%}
-      <h2 class="post-list-heading">{{ page.list_title }}</h2>
-    {%- endif -%}
+    <h2 class="post-list-heading">{{ news_title }}</h2>
     <ul class="post-list">
       {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
       {%- for post in posts -%}
