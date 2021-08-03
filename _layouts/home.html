@@ -9,7 +9,6 @@ layout: default
 
   {{ content }}
 
-
   {% if page.lang == 'fr' %}
     {% assign lang = 'fr' %}
     {% assign news_title = 'Nouvelles' %}
@@ -18,12 +17,7 @@ layout: default
     {% assign news_title = 'News' %}
   {% endif %}
   
-  {% if site.paginate %}
-    {% assign posts = paginator.posts | where: "content_type", "news" | where:"lang", lang %}
-  {% else %}
-    {% assign posts = site.posts | where: "content_type", "news" | where:"lang", lang %}
-  {% endif %}
-
+  {% assign posts = site.posts | where: "content_type", "news" | where:"lang", lang %}
   {%- if posts.size > 0 -%}
     <h2 class="post-list-heading">{{ news_title }}</h2>
     <ul class="post-list">
@@ -42,24 +36,6 @@ layout: default
       </li>
       {%- endfor -%}
     </ul>
-
-    {% if site.paginate %}
-      <div class="pager">
-        <ul class="pagination">
-        {%- if paginator.previous_page %}
-          <li><a href="{{ paginator.previous_page_path | relative_url }}" class="previous-page">{{ paginator.previous_page }}</a></li>
-        {%- else %}
-          <li><div class="pager-edge">•</div></li>
-        {%- endif %}
-          <li><div class="current-page">{{ paginator.page }}</div></li>
-        {%- if paginator.next_page %}
-          <li><a href="{{ paginator.next_page_path | relative_url }}" class="next-page">{{ paginator.next_page }}</a></li>
-        {%- else %}
-          <li><div class="pager-edge">•</div></li>
-        {%- endif %}
-        </ul>
-      </div>
-    {%- endif %}
 
   {%- endif -%}
 

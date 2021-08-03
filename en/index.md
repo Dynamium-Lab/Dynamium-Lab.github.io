@@ -1,6 +1,5 @@
 ---
 title: Welcome to Dynamium
-lang: en
 layout: home
 ---
 

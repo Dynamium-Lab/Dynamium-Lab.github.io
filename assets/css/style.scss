@@ -19,3 +19,15 @@
 .member-image {
     max-height: 150px;
 }
+
+.home-lang-grid {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.main-language {
+    flex: 1 1 200px;
+    height: 200px;
+}
