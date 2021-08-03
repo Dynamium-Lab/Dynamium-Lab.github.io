@@ -20,13 +20,16 @@
 }
 .member-item {
     display: flex;
-    height: 150px;
 }
-.member-image > div {
+.member-item>div:first-child {
     flex: 1;
 }
+.member-item>div{
+    flex: 2;
+}
 .member-image {
-    height: 150px;
+    max-height: 150px;
+    max-width: 150px;
 }
 .home-lang-grid {
     display: flex;
