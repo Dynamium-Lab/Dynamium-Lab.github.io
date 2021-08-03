@@ -17,7 +17,6 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
     gap: 1rem;
-    padding: 5px;
 }
 .member-list > p {
     font-size: 18px;
@@ -26,6 +25,7 @@
     background-color: #eee;
 }
 .member-item {
+    padding: 5px;
     display: flex;
 }
 .member-item>div:first-child {
