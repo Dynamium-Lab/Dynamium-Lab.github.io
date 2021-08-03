@@ -12,6 +12,9 @@
     .site-nav {
         padding: 10px 0;
     }
+    .main-home-logo {
+        padding: 0 10%;
+    }
 }
 .member-item {
     height: 150px;
@@ -29,5 +32,6 @@
 }
 .main-language {
     flex: 1 1 200px;
-    height: 200px;
+    text-align: center;
+    padding: 1rem 0;
 }
