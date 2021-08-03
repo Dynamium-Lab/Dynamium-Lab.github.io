@@ -25,7 +25,6 @@
 .member-image {
     max-height: 150px;
 }
-
 .home-lang-grid {
     display: flex;
     flex-wrap: wrap;
@@ -40,7 +39,9 @@
     padding: 1rem 0;
     margin: 10px;
     font-size: 30pt;
+    border-style: solid;
     border-radius: 20px;
     border-color: darkgray;
     border-width: 2pt;
+    background-color: #ddd;
 }

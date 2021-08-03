@@ -10,7 +10,7 @@
     {%- assign page_paths = site.header_pages | default: default_paths -%}
     {%- assign titles_size = site.pages | map: 'title' | join: '' | size -%}
     {%- if lang == 'en' -%}
-    <a class="site-title" rel="author" href="{{ "/" | relative_url }}"><img src={{ "assets/images/logo.svg" | relative_url }} alt={{ site.title }} style="width: 300px;"></a>
+    <a class="site-title" rel="author" href="{{ "/home" | relative_url }}"><img src={{ "assets/images/logo.svg" | relative_url }} alt={{ site.title }} style="width: 300px;"></a>
     {%- else -%}
     <a class="site-title" rel="author" href="{{ "/accueil" | relative_url }}"><img src={{ "assets/images/logo.svg" | relative_url }} alt={{ site.title }} style="width: 300px;"></a>
     {%- endif -%}
@@ -34,7 +34,7 @@
           {%- else -%}
             <a class="page-link" href="{{ "/membres" | relative_url }}">Membres</a>
             <a class="page-link" href="{{ "/publications-fr" | relative_url }}">Publications</a>
-            <a class="page-link" href="{{ "/" | relative_url }}">English</a>
+            <a class="page-link" href="{{ "/home" | relative_url }}">English</a>
           {%- endif -%}
           </div>
       </nav>
