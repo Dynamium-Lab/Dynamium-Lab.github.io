@@ -1,13 +1,30 @@
 ---
 title: Bienvenue, Welcome
-layout: default
+layout: none
 ---
 
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: " en" }}">
 
-<img src="assets/images/logo.svg" alt="Dynamium" class="main-home-logo">
+{%- include head.html -%}
 
-<div class="home-lang-grid">
-    <a class="main-language">fr</a>
-    <a class="main-language">en</a>
-</div>
+<body>
+
+    <main class="page-content" aria-label="Content">
+        <div class="wrapper">
+            <img src="assets/images/logo.svg" alt="Dynamium" class="main-home-logo">
+            
+            <div class="home-lang-grid">
+                <a class="main-language" href="{{ " /accueil" | relative_url }}">fr</a>
+                <a class="main-language" href="{{ " /home" | relative_url }}">en</a>
+            </div>
+        </div>
+    </main>
+
+    {%- include footer.html -%}
+
+</body>
+
+</html>
+
 
