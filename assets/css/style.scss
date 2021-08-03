@@ -15,14 +15,18 @@
 }
 .member-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     gap: 1rem;
 }
 .member-item {
+    display: flex;
     height: 150px;
 }
+.member-image > div {
+    flex: 1;
+}
 .member-image {
-    max-height: 150px;
+    height: 150px;
 }
 .home-lang-grid {
     display: flex;
