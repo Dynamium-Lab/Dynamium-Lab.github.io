@@ -7,6 +7,8 @@ content_type: page
 
 
 #### Journal Papers
+- Arsenault, M., Boudreau, R. and Nokleby, S. (2021). Computation of the Available Force Set of a 3-RPRR Kinematically Redundant Planar Parallel Manipulator. _ASME Journal of Mechanisms and Robotics_.
+- Boudreau, R., Nockleby, S. and Gallant, M. (2021). Wrench Capabilities of a Kinematically-Redundant Planar Parallel Manipulator. _Robotica_.
 - Gallant, A. and Gosselin, C. (2018). Extending the capabilities of robotic manipulators using trajectory optimization. _Mechanism and Machine Theory_. ([pdf](https://www.researchgate.net/profile/Andre-Gallant-2/publication/323488448_Extending_the_capabilities_of_robotic_manipulators_using_trajectory_optimization/links/5aa91f9aaca272d39cd5037b/Extending-the-capabilities-of-robotic-manipulators-using-trajectory-optimization.pdf), [Google Scholar](https://scholar.google.com/citations?view_op=view_citation&hl=fr&user=SvfSQMMAAAAJ&sortby=pubdate&citation_for_view=SvfSQMMAAAAJ:M3ejUd6NZC8C))
 - Boudreau, R. _et al_. (2018). Dynamic analysis and optimization of a kinematically redundant planar parallel manipulator. _Transactions of the Canadian Society for Mechanical Engineering_. ([pdf](https://cdnsciencepub.com/doi/pdf/10.1139/tcsme-2017-0003), [Google Scholar](https://scholar.google.com/citations?view_op=view_citation&hl=fr&user=SvfSQMMAAAAJ&sortby=pubdate&citation_for_view=SvfSQMMAAAAJ:qxL8FJ1GzNcC))
 - Lee, A. and Boudreau, R. (2018) The effect of the number of degrees of kinematic redundancy on the actuation forces of a planar parallel manipulator. _Transactions of the CSME_.
