@@ -45,6 +45,8 @@ content_type: page
 
 
 #### Conference Papers
+1. Doiron, N., Gallant, A. (2023). Increasing the payload of a 7DOF cobot. _6th IFToMM International Conference on Mechanisms, Transmissions, and Applications_. ([pdf](https://www.researchgate.net/publication/370053726_Increasing_the_Payload_of_a_7DOF_Cobot))
+1. Gallant, A., Gosselin, C. (2023). Throwing capabilities of manipulators. _6th IFToMM International Conference on Mechanisms, Transmissions, and Applications_. ([pdf](https://www.researchgate.net/publication/370053780_Throwing_Capabilities_of_Manipulators))
 1. Baril, D. _et al_. (2020). Evaluation of Skid-Steering Kinematic Models for Subarctic Environments. _17th Conference on Computer and Robot Vision (CRV)_. ([pdf](https://arxiv.org/pdf/2004.05131), [Google Scholar](https://scholar.google.com/citations?view_op=view_citation&hl=fr&user=SvfSQMMAAAAJ&sortby=pubdate&citation_for_view=SvfSQMMAAAAJ:mVmsd5A6BfQC))
 1. Boudreau, R., Nokleby, S. and Gallant, M. (2019). Investigating the Wrench Capabilities of a Kinematically-Redundant Planar Parallel Manipulator. _CCToMM Symposium on Mechanisms, Machines and Mechatronics_.
 1. Boudreau, R. _et al_. (2017). Dynamic Analysis and Optimisation of a Kinematically-Redundant Planar Parallel Manipulator. _CCToMM Symposium on Mechanisms, Machines and Mechatronics_. ([pdf](http://www.cctomm.ca/2017/107.pdf), [Google Scholar](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=SvfSQMMAAAAJ&authuser=2&citation_for_view=SvfSQMMAAAAJ:hC7cP41nSMkC))
