@@ -1,5 +1,5 @@
 ---
-title: À la découverte des frontières de l'interaction homme-robot : Rencontrez les talentueux stagiaires de Dynamium
+title: À la découverte des frontières de l'interaction homme-robot - Rencontrez les talentueux stagiaires de Dynamium
 lang: fr
 content_type: news
 ---
