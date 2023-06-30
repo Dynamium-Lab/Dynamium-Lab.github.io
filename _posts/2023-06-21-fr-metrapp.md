@@ -14,7 +14,7 @@ Le premier article, intitulé "Increasing the Payload of a 7DOF Cobot", aborde l
 
 En mettant en œuvre cet algorithme sur un manipulateur série collaboratif à 7 degrés de liberté Gen3 de Kinova, les chercheurs démontrent une augmentation significative des capacités de charge utile. Les résultats de simulation révèlent que la capacité de charge utile peut être augmentée de 4 kg à une impressionnante valeur de 8 kg lors d'une série de six tâches de préhension de bacs, toutes réalisées dans l'espace de travail intermédiaire du robot. L'article explore également 35 configurations d'optimisation différentes pour identifier les meilleurs paramètres permettant d'augmenter la charge utile de manière optimale en termes de temps, obtenant des solutions quasi-optimales avec un taux de réussite de 100% et un temps de calcul moyen de 43,3 ms. Notamment, l'algorithme montre même des résultats avec des charges utiles allant jusqu'à 14 kg.
 
-![André présentant lors de MeTrApp2023]({{ site.url }}/assets/images/230630-andre_at_metrapp2023.jpg)
+![André présentant lors de MeTrApp2023]({{ site.url }}/assets/images/230630-andre_at_metrapp2023.png)
 
 ### Capacités de lancer des manipulateurs (Lauréat du Prix de Bronze)
 
