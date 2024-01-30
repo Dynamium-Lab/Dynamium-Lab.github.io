@@ -18,10 +18,10 @@ Gone are the days when robots were confined to factory floors or the pages of a 
 
 ### Let’s Get to Work!
 So, what are we planning to do with our new metallic team members? Ready for some cheesy dad jokes?
-•	Trajectory Optimization: We're optimizing trajectories faster than a student optimizing their route to the closest pizza place at 2 a.m.
-•	Collision Avoidance: We're teaching these cobots to dodge obstacles better than a politician dodging tough questions.
-•	Dynamics Research: We aim to boost the loads our cobots can handle; they'll even spot you at the gym.
-•	New Robot Interfaces: Top secret for now and I don’t joke about top secret stuff.
+- Trajectory Optimization: We're optimizing trajectories faster than a student optimizing their route to the closest pizza place at 2 a.m.
+- Collision Avoidance: We're teaching these cobots to dodge obstacles better than a politician dodging tough questions.
+- Dynamics Research: We aim to boost the loads our cobots can handle; they'll even spot you at the gym.
+- New Robot Interfaces: Top secret for now and I don’t joke about top secret stuff.
 Cobots are not just a fad; they're here to stay and revolutionize how we perceive robotics. The possibilities are endless, and we’re just scratching the surface. So here’s to the exciting journey ahead!
 
 ### Your turn!
