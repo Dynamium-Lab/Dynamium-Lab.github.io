@@ -24,6 +24,6 @@ Merci de nous avoir lu! Nous sommes impatients de construire un avenir où les r
 
 ### Un Mot de Remerciement
  
-![Paretenaires en or !]({{ site.url }}/assets/images/230215-partners.png) 
+![Paretenaires en or !]({{ site.url }}/assets/images/230215-partners_fr.png) 
  
 Nous voudrions exprimer notre gratitude infinie envers la FINB, l'Université de Moncton et l'APÉCA. Sans leur soutien, nos robots seraient probablement toujours en train d'essayer de comprendre la différence entre un marteau et un tournevis.
