@@ -4,7 +4,7 @@ lang: fr
 content_type: news
 ---
 
-#### Notre Aventure dans l'Identification Dynamique des Robots Collaboratifs
+### Notre Aventure dans l'Identification Dynamique des Robots Collaboratifs
  
 Bonjour, Dynamium! Aujourd'hui, nous sommes suis ravi de partager avec vous une nouvelle excitante : notre projet est devenu une réalité grâce à un financement généreux de la part de la FINB, de l'Université de Moncton et de l'APÉCA. Oui, vous avez bien entendu, nous avons convaincu de vrais humains de financer nos amis robots!
  
