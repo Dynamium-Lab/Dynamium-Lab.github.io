@@ -13,7 +13,9 @@ Notre mission? Rendre les robots collaboratifs assez intelligents pour comprendr
 ### Des Robots Plus Futés, Des Humains Plus Heureux
 L'objectif ultime est de créer un environnement où les humains et les robots peuvent travailler ensemble en harmonie. Imaginez : un robot qui vous passe le bon outil au bon moment, sans même que vous ayez à le demander. C'est un peu comme avoir un assistant qui lit dans vos pensées, mais sans les conversations gênantes autour de la machine à café.
 
+<p align="center">
 ![Joke gen3]({{ site.url }}/assets/images/KinovaGen3_joke_fr.png) 
+</p>
 
 Bien sûr, le chemin est semé d'embûches. Il ne suffit pas de dire à un robot "sois intelligent". Il y a des algorithmes compliqués, des tonnes de tests et, oui, quelques moments où nos robots se comportent un peu comme des enfants capricieux. Mais chaque petit succès nous rapproche de notre grand objectif.
 
@@ -23,7 +25,9 @@ Nous sommes enthousiastes à l'idée de poursuivre cette aventure et de partager
 Merci de nous avoir lu! Nous sommes impatients de construire un avenir où les robots ne sont pas seulement des outils, mais des partenaires.
 
 ### Un Mot de Remerciement
- 
+
+<p align="center">
 ![Paretenaires en or !]({{ site.url }}/assets/images/230215-partners_fr.png) 
- 
+</p>
+
 Nous voudrions exprimer notre gratitude infinie envers la FINB, l'Université de Moncton et l'APÉCA. Sans leur soutien, nos robots seraient probablement toujours en train d'essayer de comprendre la différence entre un marteau et un tournevis.
