@@ -6,7 +6,7 @@ content_type: news
 
 ### Notre Aventure dans l'Identification Dynamique des Robots Collaboratifs
  
-Bonjour, Dynamium! Aujourd'hui, nous sommes suis ravi de partager avec vous une nouvelle excitante : notre projet est devenu une réalité grâce à un financement généreux de la part de la FINB, de l'Université de Moncton et de l'APÉCA. Oui, vous avez bien entendu, nous avons convaincu de vrais humains de financer nos amis robots!
+Bonjour, Dynamium! Aujourd'hui, nous sommes ravi de partager avec vous une nouvelle excitante : notre projet est devenu une réalité grâce à un financement généreux de la part de la FINB, de l'Université de Moncton et de l'APÉCA. Oui, vous avez bien entendu, nous avons convaincu de vrais humains de financer nos amis robots!
  
 Notre mission? Rendre les robots collaboratifs assez intelligents pour comprendre non seulement ce qu'ils font, mais aussi avec quoi ils le font. En d'autres termes, nous leur apprenons à reconnaître le modèle dynamique de leur charge. C'est comme apprendre à un enfant à ne pas seulement reconnaître qu'il porte un sac, mais aussi à comprendre s'il contient des livres ou des bonbons (surtout des bonbons).
 
