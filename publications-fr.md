@@ -8,7 +8,7 @@ content_type: page
 
 
 #### Articles
-1. Gallant, A., Gosselin, C. (2024). Maximizing the Throwing Distance of Robotic Manipulators: An Optimization Approach. Journal of Mechanisms and Robotics ([pdf] (https://asmedigitalcollection.asme.org/mechanismsrobotics/article-abstract/16/9/091008/1194692/Maximizing-the-Throwing-Distance-of-Robotic))
+1. Gallant, A., Gosselin, C. (2024). Maximizing the Throwing Distance of Robotic Manipulators: An Optimization Approach. Journal of Mechanisms and Robotics ([pdf](https://asmedigitalcollection.asme.org/mechanismsrobotics/article-abstract/16/9/091008/1194692/Maximizing-the-Throwing-Distance-of-Robotic))
 1. Arsenault, M., Boudreau, R. et Nokleby, S. (2021). Computation of the Available Force Set of a 3-RPRR Kinematically Redundant Planar Parallel Manipulator. _ASME Journal of Mechanisms and Robotics_.
 1. Boudreau, R., Nockleby, S. et Gallant, M. (2021). Wrench Capabilities of a Kinematically-Redundant Planar Parallel Manipulator. _Robotica_.
 1. Gallant, A. et Gosselin, C. (2018). Extending the capabilities of robotic manipulators using trajectory optimization. _Mechanism and Machine Theory_. ([pdf](https://www.researchgate.net/profile/Andre-Gallant-2/publication/323488448_Extending_the_capabilities_of_robotic_manipulators_using_trajectory_optimization/links/5aa91f9aaca272d39cd5037b/Extending-the-capabilities-of-robotic-manipulators-using-trajectory-optimization.pdf), [Google Scholar](https://scholar.google.com/citations?view_op=view_citation&hl=fr&user=SvfSQMMAAAAJ&sortby=pubdate&citation_for_view=SvfSQMMAAAAJ:M3ejUd6NZC8C))
