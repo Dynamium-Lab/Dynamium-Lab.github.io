@@ -1,0 +1,52 @@
+# UI copy in both languages. Referenced in layouts/pages as {{ site.data.strings[page.lang].xxx }}.
+# Edit the FR block for wording changes to French copy, EN block for English.
+
+en:
+  html_lang: "en"
+  nav:
+    research: "RESEARCH"
+    members: "MEMBERS"
+    news: "NEWS"
+    contact: "CONTACT"
+  switch_label: "FR"
+  switch_url: "/"
+  badge: "UNIVERSITÉ DE MONCTON — DYNAMIC SYSTEMS LAB"
+  hero_title: "Robotic manipulators, engineered for working alongside people."
+  hero_body: "Dynamium is a robotics research laboratory specialized in robotic manipulators and physical human-robot interaction. We showcase our demos and results, and share knowledge along the way."
+  cta_primary: "VIEW RESEARCH →"
+  cta_secondary: "JOIN THE LAB"
+  research_heading: "Research Areas"
+  members_heading: "Members"
+  news_heading: "News"
+  sections:
+    professors: "Professors"
+    staff_grad: "Staff & Graduate Students"
+    undergrad: "Undergrads"
+    alumni: "Alumni"
+  footer_tagline: "Dynamic Systems Lab, Université de Moncton"
+  footer_rights: "DYNAMIC SYSTEMS LAB, UNIVERSITÉ DE MONCTON"
+
+fr:
+  html_lang: "fr"
+  nav:
+    research: "RECHERCHE"
+    members: "MEMBRES"
+    news: "NOUVELLES"
+    contact: "CONTACT"
+  switch_label: "EN"
+  switch_url: "/en/"
+  badge: "UNIVERSITÉ DE MONCTON — LABORATOIRE DES SYSTÈMES DYNAMIQUES"
+  hero_title: "Des manipulateurs robotiques, conçus pour travailler aux côtés des humains."
+  hero_body: "Dynamium est un laboratoire de recherche en robotique spécialisé dans les manipulateurs robotiques et l’interaction physique humain-robot. Nous présentons nos démonstrations et nos résultats, et partageons nos connaissances en cours de route."
+  cta_primary: "VOIR LA RECHERCHE →"
+  cta_secondary: "JOINDRE LE LABO"
+  research_heading: "Axes de recherche"
+  members_heading: "Membres"
+  news_heading: "Nouvelles"
+  sections:
+    professors: "Professeures et professeurs"
+    staff_grad: "Personnel et étudiant.e.s des cycles supérieurs"
+    undergrad: "Étudiants au premier cycle"
+    alumni: "Anciens membres"
+  footer_tagline: "Laboratoire des systèmes dynamiques, Université de Moncton"
+  footer_rights: "LABORATOIRE DES SYSTÈMES DYNAMIQUES, UNIVERSITÉ DE MONCTON"

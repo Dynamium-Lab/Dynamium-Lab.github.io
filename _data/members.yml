@@ -1,0 +1,146 @@
+# One entry per person, with English/French fields side by side.
+#
+# Fields:
+#   name           (required)
+#   role_en / role_fr   (required) - shown under the name
+#   section        (required) - one of: professors, staff_grad, undergrad, alumni
+#                                (labels for these are translated in _data/strings.yml)
+#   tags_en / tags_fr   (optional) - research focus tags, shown on Professors cards
+#   photo          (optional) - path (e.g. /assets/images/name.png) or full URL.
+#                                Omit to show a plain initials placeholder instead.
+#   photo_position (optional) - CSS object-position for cropping, e.g. "50% 20%".
+#   link           (optional) - personal site / LinkedIn, name becomes a link if set
+
+- name: André Gallant
+  role_en: "Assistant Professor — Director"
+  role_fr: "Professeur adjoint — directeur"
+  section: professors
+  tags_en: [Trajectory optimization, Motion planning, Human-robot cooperation]
+  tags_fr: [Optimisation de trajectoire, Planification du mouvement, Coopération humain-robot]
+  photo: /assets/images/andre-gallant.png
+  photo_position: "50% 35%"
+  link: https://gallantandre.com
+
+- name: Marise Gallant
+  role_en: "Associate Professor"
+  role_fr: "Professeure agrégée"
+  section: professors
+  tags_en: [Kinematics of parallel manipulators, Machine dynamics]
+  tags_fr: [Cinématique des manipulateurs parallèles, Dynamique des machines]
+  photo: /assets/images/marise-gallant.png
+  photo_position: "50% 25%"
+  link: https://www.umoncton.ca/umcm-ingenierie-mecanique/node/25
+
+- name: Nancy Black
+  role_en: "Full Professor"
+  role_fr: "Professeure titulaire"
+  section: professors
+  tags_en: [Ergonomics, Musculoskeletal disorders, Biomechanics]
+  tags_fr: [Ergonomie, Maladies musculosquelettiques, Biomécanique]
+  photo: https://www.dynamium.ca/assets/images/nancy.jpg
+  photo_position: "50% 15%"
+  link: https://www.umoncton.ca/prof/umcm-black_nancy
+
+- name: Roger Boudreau
+  role_en: "Full Professor"
+  role_fr: "Professeur titulaire"
+  section: professors
+  tags_en: ["Kinematics & dynamics of parallel manipulators", Synthesis]
+  tags_fr: ["Cinématique et dynamique des manipulateurs parallèles", "Synthèse des manipulateurs"]
+  photo: https://www.dynamium.ca/assets/images/roger.jpg
+  photo_position: "50% 20%"
+  link: https://www.umoncton.ca/prof/umcm-boudreau_roger/
+
+- name: Gilde Vanel Tchane Djogdom
+  role_en: "Postdoc"
+  role_fr: "Postdoc"
+  section: staff_grad
+  highlight: true
+  photo: https://www.dynamium.ca/assets/images/vanel.jpg
+  photo_position: "50% 20%"
+  link: https://www.linkedin.com/in/gilde-vanel-tchane-djogdom-a1998810b/
+
+- name: Nikos Doiron
+  role_en: "Ph.D. Candidate"
+  role_fr: "Étudiant au doctorat"
+  section: staff_grad
+  photo: https://www.dynamium.ca/assets/images/nikos.png
+  photo_position: "50% 15%"
+  link: https://www.linkedin.com/in/nikos-d-016469117/
+
+- name: Thomas Duquette
+  role_en: "Ph.D. Candidate"
+  role_fr: "Étudiant au doctorat"
+  section: staff_grad
+
+- name: Mouad Chabba
+  role_en: "Master's Student"
+  role_fr: "Étudiant à la maîtrise"
+  section: staff_grad
+  photo: https://www.dynamium.ca/assets/images/MouadChabba.png
+  photo_position: "50% 15%"
+  link: https://www.linkedin.com/in/mouad-chabba-3161bb219/
+
+- name: Meriem Haddaji Mastouri
+  role_en: "Master's Student"
+  role_fr: "Étudiante à la maîtrise"
+  section: staff_grad
+  photo: https://www.dynamium.ca/assets/images/meriem.png
+  photo_position: "50% 15%"
+  link: https://www.linkedin.com/in/meriem-haddaji-mastouri/
+
+- name: Mohamed Sedki Limam
+  role_en: "Master's Student"
+  role_fr: "Étudiant à la maîtrise"
+  section: staff_grad
+
+- name: Mouna Elamari
+  role_en: "Master's Student"
+  role_fr: "Étudiante à la maîtrise"
+  section: staff_grad
+  link: https://www.linkedin.com/in/mouna-el-amari-9a010518a
+
+- name: Ghali Kabbaj
+  role_en: "Mechanical Engineering Student"
+  role_fr: "Étudiant en génie mécanique"
+  section: undergrad
+  photo: https://www.dynamium.ca/assets/images/ghali.jpg
+  photo_position: "50% 20%"
+  link: https://www.linkedin.com/in/-ghali-kabbaj/
+
+- name: Youssef Ismail
+  role_en: "Mechanical Engineering Student"
+  role_fr: "Étudiant en génie mécanique"
+  section: undergrad
+
+- name: Natanaël Jamet
+  role_en: "Mecatronics Engineering Student"
+  role_fr: "Étudiant en génie mécatronique"
+  section: alumni
+
+- name: Wissem Chiha
+  role_en: "Mechanical Engineering Senior"
+  role_fr: "Étudiant en génie mécanique (finissant)"
+  section: alumni
+  link: https://www.linkedin.com/in/wissem-chiha-a0264821b/
+
+- name: Moemen Smiri
+  role_en: "Electrical Engineering Senior"
+  role_fr: "Étudiant en génie électrique (finissant)"
+  section: alumni
+  link: https://www.linkedin.com/in/moemen-smiri-91b322248/
+
+- name: Vaibhav Satija
+  role_en: "Graduate - Software Engineering"
+  role_fr: "Diplômé en génie logiciel"
+  section: alumni
+
+- name: Antonin Ansion
+  role_en: "Graduate - Mechanical Engineering"
+  role_fr: "Diplômé en génie mécanique"
+  section: alumni
+
+- name: Joshua Flight
+  role_en: "Graduate - Mechanical Engineering"
+  role_fr: "Diplômé en génie mécanique"
+  section: alumni

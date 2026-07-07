@@ -1,0 +1,25 @@
+# Each entry becomes one card in the Research Areas section, in both languages.
+
+- number: "01"
+  title_en: "Trajectory Optimization & Motion Planning"
+  title_fr: "Optimisation de trajectoire et planification du mouvement"
+  description_en: "Planning and optimizing manipulator motion — from redundant arms to collision-aware trajectories."
+  description_fr: "Planification et optimisation du mouvement des manipulateurs — des bras redondants aux trajectoires évitant les collisions."
+
+- number: "02"
+  title_en: "Physical Human-Robot Interaction"
+  title_fr: "Interaction physique humain-robot"
+  description_en: "Collaborative robots and cobots working safely and productively alongside people."
+  description_fr: "Des robots collaboratifs qui travaillent de façon sécuritaire et productive aux côtés des humains."
+
+- number: "03"
+  title_en: "Kinematics & Dynamics of Parallel Manipulators"
+  title_fr: "Cinématique et dynamique des manipulateurs parallèles"
+  description_en: "Synthesis and analysis of parallel-manipulator architectures, including kinematic redundancy."
+  description_fr: "Synthèse et analyse d'architectures de manipulateurs parallèles, incluant la redondance cinématique."
+
+- number: "04"
+  title_en: "Ergonomics & Biomechanics"
+  title_fr: "Ergonomie et biomécanique"
+  description_en: "Studying musculoskeletal disorders and human upper-limb movement to inform safer work systems."
+  description_fr: "Étude des maladies musculosquelettiques et du mouvement des membres supérieurs humains, pour des méthodes de travail plus sécuritaires."

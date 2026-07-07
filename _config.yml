@@ -1,13 +1,23 @@
 title: Dynamium
+description: >-
+  Dynamic Systems Lab — Université de Moncton. Robotics research
+  laboratory specialized in robotic manipulators and physical
+  human-robot interaction.
+baseurl: "" # set this to your repo name if publishing at username.github.io/repo-name, else leave blank
+url: "" # set this to https://your-username.github.io (or your custom domain)
 
-author:
-  name: Andre Gallant
+default_lang: fr
 
-minima:
-  skin: classic
-  
-header_pages:
-  - members.md
-  - publications.md
-  
-theme: minima
+# section order used on the homepage — edit here to reorder (labels are in _data/strings.yml)
+members_sections:
+  - professors
+  - staff_grad
+  - undergrad
+  - alumni
+
+markdown: kramdown
+plugins:
+  - jekyll-feed
+
+exclude:
+  - README.md
