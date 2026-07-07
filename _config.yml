@@ -4,7 +4,7 @@ description: >-
   laboratory specialized in robotic manipulators and physical
   human-robot interaction.
 baseurl: "" # set this to your repo name if publishing at username.github.io/repo-name, else leave blank
-url: "" # set this to https://your-username.github.io (or your custom domain)
+url: "https://www.dynamium.ca" # matches CNAME; set this to https://your-username.github.io if not using a custom domain
 
 default_lang: fr
 
@@ -18,6 +18,13 @@ members_sections:
 markdown: kramdown
 plugins:
   - jekyll-feed
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
 
 exclude:
   - README.md

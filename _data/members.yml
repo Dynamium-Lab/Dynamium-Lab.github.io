@@ -36,7 +36,7 @@
   role_fr: "Postdoc"
   section: staff_grad
   highlight: true
-  photo: https://www.dynamium.ca/assets/images/vanel.jpg
+  photo: /assets/images/vanel.jpg
   photo_position: "50% 20%"
   link: https://www.linkedin.com/in/gilde-vanel-tchane-djogdom-a1998810b/
 
@@ -44,7 +44,7 @@
   role_en: "Ph.D. Candidate"
   role_fr: "Étudiant au doctorat"
   section: staff_grad
-  photo: https://www.dynamium.ca/assets/images/nikos.png
+  photo: /assets/images/nikos.png
   photo_position: "50% 15%"
   link: https://www.linkedin.com/in/nikos-d-016469117/
 
@@ -57,7 +57,7 @@
   role_en: "Master's Student"
   role_fr: "Étudiant à la maîtrise"
   section: staff_grad
-  photo: https://www.dynamium.ca/assets/images/MouadChabba.png
+  photo: /assets/images/MouadChabba.png
   photo_position: "50% 15%"
   link: https://www.linkedin.com/in/mouad-chabba-3161bb219/
 
@@ -65,7 +65,7 @@
   role_en: "Master's Student"
   role_fr: "Étudiante à la maîtrise"
   section: staff_grad
-  photo: https://www.dynamium.ca/assets/images/meriem.png
+  photo: /assets/images/meriem.png
   photo_position: "50% 15%"
   link: https://www.linkedin.com/in/meriem-haddaji-mastouri/
 
@@ -84,7 +84,7 @@
   role_en: "Mechanical Engineering Student"
   role_fr: "Étudiant en génie mécanique"
   section: undergrad
-  photo: https://www.dynamium.ca/assets/images/ghali.jpg
+  photo: /assets/images/ghali.jpg
   photo_position: "50% 20%"
   link: https://www.linkedin.com/in/-ghali-kabbaj/
 

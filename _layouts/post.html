@@ -1,0 +1,11 @@
+---
+layout: default
+---
+<div class="section" style="position:relative;z-index:1;max-width:760px;margin:0 auto;padding:64px 48px;">
+  <a href="{% if page.lang == 'fr' %}{{ '/' | relative_url }}{% else %}{{ '/en/' | relative_url }}{% endif %}#news" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#E0A725;text-decoration:none;letter-spacing:0.06em;">{% if page.lang == 'fr' %}← RETOUR{% else %}← BACK{% endif %}</a>
+  <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#9FB0C2;margin-top:24px;">{{ page.date | date: "%b %-d, %Y" | upcase }}</div>
+  <h1 style="font-size:34px;font-weight:700;line-height:1.15;margin-top:10px;">{{ page.title }}</h1>
+  <div style="margin-top:26px;font-size:16px;line-height:1.7;color:#D7DEE6;">
+    {{ content }}
+  </div>
+</div>

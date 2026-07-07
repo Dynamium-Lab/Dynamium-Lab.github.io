@@ -6,37 +6,41 @@ permalink: /en/
 ---
 
 {% assign t = site.data.strings[page.lang] %}
+{% assign title_key = "title_" | append: page.lang %}
+{% assign desc_key = "description_" | append: page.lang %}
+{% assign role_key = "role_" | append: page.lang %}
+{% assign tags_key = "tags_" | append: page.lang %}
 
 <!-- HERO -->
-<div data-screen-label="Hero" style="position:relative;z-index:1;padding:80px 48px 64px;border-bottom:1px solid rgba(224,167,37,0.25);">
+<div data-screen-label="Hero" class="hero" style="position:relative;z-index:1;padding:80px 48px 64px;border-bottom:1px solid rgba(224,167,37,0.25);">
   <div style="display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.14em;color:#0A1620;background:#E0A725;padding:5px 10px;margin-bottom:22px;">{{ t.badge }}</div>
-  <div style="font-size:60px;font-weight:700;line-height:1.05;letter-spacing:-0.01em;max-width:840px;">{{ t.hero_title }}</div>
+  <div class="hero-title" style="font-size:60px;font-weight:700;line-height:1.05;letter-spacing:-0.01em;max-width:840px;">{{ t.hero_title }}</div>
   <div style="margin-top:22px;font-size:16.5px;line-height:1.65;color:#9FB0C2;max-width:600px;">{{ t.hero_body }}</div>
-  <div style="margin-top:32px;display:flex;gap:14px;">
+  <div style="margin-top:32px;display:flex;flex-wrap:wrap;gap:14px;">
     <a href="#research" style="background:#E0A725;color:#0A1620;padding:13px 26px;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:12.5px;letter-spacing:0.06em;text-decoration:none;">{{ t.cta_primary }}</a>
     <a href="#contact" style="border:1px solid #3A4C5E;color:#E7ECF1;padding:13px 26px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:0.06em;text-decoration:none;">{{ t.cta_secondary }}</a>
   </div>
 </div>
 
 <!-- RESEARCH -->
-<div id="research" data-screen-label="Research" style="position:relative;z-index:1;padding:64px 48px;border-bottom:1px solid rgba(224,167,37,0.2);">
+<div id="research" data-screen-label="Research" class="section" style="position:relative;z-index:1;padding:64px 48px;border-bottom:1px solid rgba(224,167,37,0.2);">
   <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:30px;">
     <div style="font-size:30px;font-weight:700;">{{ t.research_heading }}</div>
     <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#E0A725;letter-spacing:0.06em;">01 — {{ site.data.research.size | prepend: "0" | slice: -2, 2 }}</div>
   </div>
-  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:#3A4C5E;">
+  <div class="grid-2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:#3A4C5E;">
     {% for area in site.data.research %}
     <div style="background:#101E2B;padding:28px 30px;">
       <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#E0A725;letter-spacing:0.08em;">{{ area.number }}</div>
-      <div style="font-weight:600;font-size:19px;margin-top:10px;">{{ area["title_" | append: page.lang] }}</div>
-      <div style="font-size:13.5px;color:#9FB0C2;margin-top:10px;line-height:1.6;">{{ area["description_" | append: page.lang] }}</div>
+      <div style="font-weight:600;font-size:19px;margin-top:10px;">{{ area[title_key] }}</div>
+      <div style="font-size:13.5px;color:#9FB0C2;margin-top:10px;line-height:1.6;">{{ area[desc_key] }}</div>
     </div>
     {% endfor %}
   </div>
 </div>
 
 <!-- MEMBERS -->
-<div id="members" data-screen-label="Members" style="position:relative;z-index:1;padding:64px 48px;border-bottom:1px solid rgba(224,167,37,0.2);">
+<div id="members" data-screen-label="Members" class="section" style="position:relative;z-index:1;padding:64px 48px;border-bottom:1px solid rgba(224,167,37,0.2);">
   <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:30px;">
     <div style="font-size:30px;font-weight:700;">{{ t.members_heading }}</div>
     <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#E0A725;letter-spacing:0.06em;">02 — 04</div>
@@ -52,9 +56,9 @@ permalink: /en/
       {% for person in people %}<span>{{ person.name }}</span>{% endfor %}
     </div>
     {% else %}
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:#3A4C5E;margin-bottom:44px;">
+    <div class="grid-4" style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:transparent;margin-bottom:44px;">
       {% for person in people %}
-      <div style="background:#101E2B;">
+      <div style="background:#101E2B;border:1px solid #3A4C5E;">
         <div style="position:relative;{% unless person.photo %}width:100%;aspect-ratio:5/3;display:flex;align-items:center;justify-content:center;background:#16283A;font-family:'IBM Plex Mono',monospace;font-size:26px;font-weight:600;color:#5C7189;{% endunless %}">
           {% if person.photo %}
           <img src="{% unless person.photo contains 'http' %}{{ person.photo | relative_url }}{% else %}{{ person.photo }}{% endunless %}" alt="{{ person.name }}" style="width:100%;aspect-ratio:5/3;object-fit:cover;object-position:{{ person.photo_position | default: '50% 20%' }};display:block;filter:grayscale(20%) contrast(1.05) brightness(0.95);">
@@ -66,8 +70,8 @@ permalink: /en/
         </div>
         <div style="padding:14px 16px;">
           <div style="font-weight:600;font-size:15px;">{% if person.link %}<a href="{{ person.link }}" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">{{ person.name }}</a>{% else %}{{ person.name }}{% endif %}</div>
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:{% if person.highlight %}#E0A725{% else %}#9FB0C2{% endif %};margin-top:4px;">{{ person["role_" | append: page.lang] | upcase }}</div>
-          {% assign tags = person["tags_" | append: page.lang] %}
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:{% if person.highlight %}#E0A725{% else %}#9FB0C2{% endif %};margin-top:4px;">{{ person[role_key] | upcase }}</div>
+          {% assign tags = person[tags_key] %}
           {% if tags %}
           <div style="font-size:12px;color:#9FB0C2;margin-top:8px;line-height:1.5;">{{ tags | join: ", " }}</div>
           {% endif %}
@@ -81,7 +85,7 @@ permalink: /en/
 </div>
 
 <!-- NEWS -->
-<div id="news" data-screen-label="News" style="position:relative;z-index:1;padding:64px 48px;border-bottom:1px solid rgba(224,167,37,0.2);">
+<div id="news" data-screen-label="News" class="section" style="position:relative;z-index:1;padding:64px 48px;border-bottom:1px solid rgba(224,167,37,0.2);">
   <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:30px;">
     <div style="font-size:30px;font-weight:700;">{{ t.news_heading }}</div>
     <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#E0A725;letter-spacing:0.06em;">03 — 04</div>
@@ -89,10 +93,28 @@ permalink: /en/
   {% assign lang_posts = site.posts | where: "lang", page.lang %}
   <div style="display:flex;flex-direction:column;">
     {% for post in lang_posts limit:6 %}
-    <div style="display:flex;gap:28px;padding:18px 0;{% unless forloop.last %}border-bottom:1px solid rgba(224,167,37,0.15);{% endunless %}">
-      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#E0A725;width:110px;flex:none;">{{ post.date | date: "%b %-d, %Y" | upcase }}</div>
+    <div class="news-row" style="display:flex;gap:28px;padding:18px 0;{% unless forloop.last %}border-bottom:1px solid rgba(224,167,37,0.15);{% endunless %}">
+      <div class="news-date" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#E0A725;width:110px;flex:none;">{{ post.date | date: "%b %-d, %Y" | upcase }}</div>
       <div style="font-weight:600;font-size:15.5px;"><a href="{{ post.url | relative_url }}" style="color:inherit;text-decoration:none;">{{ post.title }}</a></div>
     </div>
     {% endfor %}
   </div>
+</div>
+
+<!-- CONTACT -->
+<div id="contact" data-screen-label="Contact" class="section" style="position:relative;z-index:1;padding:64px 48px;">
+  <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:30px;">
+    <div style="font-size:30px;font-weight:700;">{{ t.contact_heading }}</div>
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#E0A725;letter-spacing:0.06em;">04 — 04</div>
+  </div>
+  <div style="font-size:14.5px;line-height:1.6;color:#9FB0C2;max-width:520px;margin-bottom:28px;">{{ t.contact_body }}</div>
+  <form action="https://formsubmit.co/andre.gallant@umoncton.ca" method="POST" style="max-width:520px;display:flex;flex-direction:column;gap:14px;">
+    <input type="hidden" name="_subject" value="New message from dynamium.ca">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_next" value="{{ site.url }}{{ page.url }}#contact">
+    <input type="text" name="name" placeholder="{{ t.contact_name }}" required style="width:100%;box-sizing:border-box;background:#101E2B;border:1px solid #3A4C5E;color:#E7ECF1;padding:12px 14px;font-family:'Space Grotesk',sans-serif;font-size:14px;">
+    <input type="email" name="email" placeholder="{{ t.contact_email }}" required style="width:100%;box-sizing:border-box;background:#101E2B;border:1px solid #3A4C5E;color:#E7ECF1;padding:12px 14px;font-family:'Space Grotesk',sans-serif;font-size:14px;">
+    <textarea name="message" placeholder="{{ t.contact_message }}" required rows="5" style="width:100%;box-sizing:border-box;background:#101E2B;border:1px solid #3A4C5E;color:#E7ECF1;padding:12px 14px;font-family:'Space Grotesk',sans-serif;font-size:14px;resize:vertical;"></textarea>
+    <button type="submit" style="align-self:flex-start;background:#E0A725;color:#0A1620;border:none;padding:13px 26px;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:12.5px;letter-spacing:0.06em;cursor:pointer;">{{ t.contact_submit }}</button>
+  </form>
 </div>
