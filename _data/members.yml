@@ -31,26 +31,6 @@
   photo_position: "50% 25%"
   link: https://www.umoncton.ca/umcm-ingenierie-mecanique/node/25
 
-- name: Nancy Black
-  role_en: "Full Professor"
-  role_fr: "Professeure titulaire"
-  section: professors
-  tags_en: [Ergonomics, Musculoskeletal disorders, Biomechanics]
-  tags_fr: [Ergonomie, Maladies musculosquelettiques, Biomécanique]
-  photo: https://www.dynamium.ca/assets/images/nancy.jpg
-  photo_position: "50% 15%"
-  link: https://www.umoncton.ca/prof/umcm-black_nancy
-
-- name: Roger Boudreau
-  role_en: "Full Professor"
-  role_fr: "Professeur titulaire"
-  section: professors
-  tags_en: ["Kinematics & dynamics of parallel manipulators", Synthesis]
-  tags_fr: ["Cinématique et dynamique des manipulateurs parallèles", "Synthèse des manipulateurs"]
-  photo: https://www.dynamium.ca/assets/images/roger.jpg
-  photo_position: "50% 20%"
-  link: https://www.umoncton.ca/prof/umcm-boudreau_roger/
-
 - name: Gilde Vanel Tchane Djogdom
   role_en: "Postdoc"
   role_fr: "Postdoc"
