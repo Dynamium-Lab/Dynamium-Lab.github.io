@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 {% assign t = site.data.strings[page.lang] %}
+{% if page.lang == 'fr' %}{% assign home_url = '/' | relative_url %}{% else %}{% assign home_url = '/en/' | relative_url %}{% endif %}
 <title>{{ page.title }}{% if page.title %} · {% endif %}{{ site.title }}</title>
 <meta name="description" content="{{ site.description }}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,12 +44,12 @@
 
   <!-- NAV -->
   <div class="nav" style="position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;row-gap:10px;padding:14px 48px;border-bottom:2px solid #E0A725;background:#0A1620;">
-    <a href="{% if page.lang == 'fr' %}{{ '/' | relative_url }}{% else %}{{ '/en/' | relative_url }}{% endif %}"><img src="{{ '/assets/images/logo.png' | relative_url }}" alt="{{ site.title }}" class="logo-img" style="height:50px;width:auto;display:block;"></a>
+    <a href="{{ home_url }}"><img src="{{ '/assets/images/logo.png' | relative_url }}" alt="{{ site.title }}" class="logo-img" style="height:50px;width:auto;display:block;"></a>
     <div class="nav-links" style="display:flex;align-items:center;flex-wrap:wrap;gap:34px;row-gap:10px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:0.06em;color:#9FB0C2;">
-      <a href="#research" style="color:#9FB0C2;text-decoration:none;">{{ t.nav.research }}</a>
-      <a href="#members" style="color:#9FB0C2;text-decoration:none;">{{ t.nav.members }}</a>
-      <a href="#news" style="color:#9FB0C2;text-decoration:none;">{{ t.nav.news }}</a>
-      <a href="#contact" style="color:#9FB0C2;text-decoration:none;">{{ t.nav.contact }}</a>
+      <a href="{{ home_url }}#research" style="color:#9FB0C2;text-decoration:none;">{{ t.nav.research }}</a>
+      <a href="{{ home_url }}#members" style="color:#9FB0C2;text-decoration:none;">{{ t.nav.members }}</a>
+      <a href="{{ home_url }}#news" style="color:#9FB0C2;text-decoration:none;">{{ t.nav.news }}</a>
+      <a href="{{ home_url }}#contact" style="color:#9FB0C2;text-decoration:none;">{{ t.nav.contact }}</a>
       <a href="{{ t.switch_url | relative_url }}" style="color:#E0A725;border:1px solid rgba(224,167,37,0.4);padding:5px 10px;text-decoration:none;">{{ t.switch_label }}</a>
     </div>
   </div>
