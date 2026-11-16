@@ -1,0 +1,118 @@
+{% comment %}
+  Corps de la page d'accueil, commun au français (index.html) et à l'anglais (en/index.html).
+  La langue vient de page.lang; les textes viennent de _data/strings.yml et des autres fichiers _data.
+{% endcomment %}
+{% assign t = site.data.strings[page.lang] %}
+{% assign title_key = "title_" | append: page.lang %}
+{% assign desc_key = "description_" | append: page.lang %}
+{% assign role_key = "role_" | append: page.lang %}
+{% assign tags_key = "tags_" | append: page.lang %}
+
+<section class="hero">
+  <div class="wrap">
+    <div class="affiliation">{{ t.lab_name }}, {{ t.university }}</div>
+    <h1>{{ t.hero_title }}</h1>
+    <p>{{ t.hero_body }}</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="#research">{{ t.cta_primary }}</a>
+      <a class="btn btn-secondary" href="#contact">{{ t.cta_secondary }}</a>
+    </div>
+  </div>
+</section>
+
+<section id="research" class="section" aria-labelledby="research-title">
+  <div class="wrap">
+    <h2 id="research-title">{{ t.research_heading }}</h2>
+    <p class="lead">{{ t.research_lead }}</p>
+    <div class="research-grid">
+      {% for area in site.data.research %}
+      <div class="research-card">
+        <h3>{{ area[title_key] }}</h3>
+        <p>{{ area[desc_key] }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="members" class="section" aria-labelledby="members-title">
+  <div class="wrap">
+    <h2 id="members-title">{{ t.members_heading }}</h2>
+    {% for section in site.members_sections %}
+      {% assign people = site.data.members | where: "section", section %}
+      {% if people.size > 0 %}
+      <h3 class="group">{{ t.sections[section] }}</h3>
+      {% if section == "alumni" %}
+      <ul class="alumni">
+        {% for person in people %}
+        <li>{% if person.link %}<a href="{{ person.link }}" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">{{ person.name }}</a>{% else %}{{ person.name }}{% endif %}{% if person[role_key] %}<br><span>{{ person[role_key] }}</span>{% endif %}</li>
+        {% endfor %}
+      </ul>
+      {% else %}
+      <div class="people-grid">
+        {% for person in people %}
+        <div class="person">
+          {% if person.photo %}
+          <img class="photo" src="{% unless person.photo contains 'http' %}{{ person.photo | relative_url }}{% else %}{{ person.photo }}{% endunless %}" alt="{{ person.name }}" loading="lazy" style="object-position:{{ person.photo_position | default: '50% 20%' }};">
+          {% else %}
+          {% assign name_parts = person.name | split: ' ' %}
+          <div class="initials" aria-hidden="true">{{ name_parts.first | slice: 0, 1 }}{{ name_parts.last | slice: 0, 1 }}</div>
+          {% endif %}
+          <div class="info">
+            <div class="name">{% if person.link %}<a href="{{ person.link }}" target="_blank" rel="noopener">{{ person.name }}</a>{% else %}{{ person.name }}{% endif %}</div>
+            <div class="role">{{ person[role_key] }}</div>
+            {% assign tags = person[tags_key] %}
+            {% if tags %}<div class="tags">{{ tags | join: " · " }}</div>{% endif %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      {% endif %}
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+
+<section id="news" class="section" aria-labelledby="news-title">
+  <div class="wrap">
+    <h2 id="news-title">{{ t.news_heading }}</h2>
+    {% assign lang_posts = site.posts | where: "lang", page.lang %}
+    <ul class="news-list">
+      {% for post in lang_posts limit:6 %}
+      <li>
+        <time datetime="{{ post.date | date_to_xmlschema }}">{% include date.html date=post.date lang=page.lang %}</time>
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section id="contact" class="section" aria-labelledby="contact-title">
+  <div class="wrap">
+    <h2 id="contact-title">{{ t.contact_heading }}</h2>
+    <div class="contact-grid">
+      <div>
+        <p style="color:var(--muted);margin-top:0;">{{ t.contact_body }}</p>
+        <address>
+          <strong>{{ site.title }}, {{ t.lab_name }}</strong><br>
+          {{ t.department }}<br>
+          {{ t.faculty }}<br>
+          {{ t.university }}<br>
+          {{ t.address_street }}<br>
+          {{ t.address_city }}
+        </address>
+      </div>
+      <form class="contact-form" action="https://formsubmit.co/4f66afb5d0172fa87ffb7b7b33b9dca6" method="POST">
+        <input type="hidden" name="_subject" value="{{ t.contact_subject }}">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="{{ site.url }}{{ page.url }}#contact">
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+        <label>{{ t.contact_name }}<input type="text" name="name" autocomplete="name" required></label>
+        <label>{{ t.contact_email }}<input type="email" name="email" autocomplete="email" required></label>
+        <label>{{ t.contact_message }}<textarea name="message" rows="6" required></textarea></label>
+        <button class="btn btn-primary" type="submit">{{ t.contact_submit }}</button>
+      </form>
+    </div>
+  </div>
+</section>

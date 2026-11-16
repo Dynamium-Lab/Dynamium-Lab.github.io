@@ -2,18 +2,18 @@
 #
 # Fields:
 #   name           (required)
-#   role_en / role_fr   (required) - shown under the name
-#   section        (required) - one of: professors, staff_grad, undergrad, alumni
-#                                (labels for these are translated in _data/strings.yml)
-#   tags_en / tags_fr   (optional) - research focus tags, shown on Professors cards
-#   photo          (optional) - path (e.g. /assets/images/name.png) or full URL.
-#                                Omit to show a plain initials placeholder instead.
-#   photo_position (optional) - CSS object-position for cropping, e.g. "50% 20%".
-#   link           (optional) - personal site / LinkedIn, name becomes a link if set
+#   role_en / role_fr   (required): shown under the name (and under alumni names)
+#   section        (required): one of professors, staff_grad, undergrad, alumni
+#                              (labels for these are translated in _data/strings.yml)
+#   tags_en / tags_fr   (optional): research focus tags, shown on professor cards
+#   photo          (optional): path (e.g. /assets/images/name.png) or full URL.
+#                              Omit to show a plain initials placeholder instead.
+#   photo_position (optional): CSS object-position for cropping, e.g. "50% 20%".
+#   link           (optional): personal site or LinkedIn; the name becomes a link if set
 
 - name: André Gallant
-  role_en: "Assistant Professor — Director"
-  role_fr: "Professeur adjoint — directeur"
+  role_en: "Assistant Professor, Lab Director"
+  role_fr: "Professeur adjoint, directeur du laboratoire"
   section: professors
   tags_en: [Trajectory optimization, Motion planning, Human-robot cooperation]
   tags_fr: [Optimisation de trajectoire, Planification du mouvement, Coopération humain-robot]
@@ -32,8 +32,8 @@
   link: https://www.umoncton.ca/umcm-ingenierie-mecanique/node/25
 
 - name: Gilde Vanel Tchane Djogdom
-  role_en: "Postdoc"
-  role_fr: "Postdoc"
+  role_en: "Postdoctoral Fellow"
+  role_fr: "Stagiaire postdoctoral"
   section: staff_grad
   highlight: true
   photo: /assets/images/vanel.jpg
@@ -41,7 +41,7 @@
   link: https://www.linkedin.com/in/gilde-vanel-tchane-djogdom-a1998810b/
 
 - name: Nikos Doiron
-  role_en: "Ph.D. Candidate"
+  role_en: "PhD Candidate"
   role_fr: "Étudiant au doctorat"
   section: staff_grad
   photo: /assets/images/nikos.png
@@ -49,7 +49,7 @@
   link: https://www.linkedin.com/in/nikos-d-016469117/
 
 - name: Thomas Duquette
-  role_en: "Ph.D. Candidate"
+  role_en: "PhD Candidate"
   role_fr: "Étudiant au doctorat"
   section: staff_grad
 
@@ -94,33 +94,33 @@
   section: undergrad
 
 - name: Natanaël Jamet
-  role_en: "Mecatronics Engineering Student"
+  role_en: "Mechatronics Engineering Student"
   role_fr: "Étudiant en génie mécatronique"
   section: alumni
 
 - name: Wissem Chiha
-  role_en: "Mechanical Engineering Senior"
-  role_fr: "Étudiant en génie mécanique (finissant)"
+  role_en: "Mechanical Engineering Student"
+  role_fr: "Étudiant en génie mécanique"
   section: alumni
   link: https://www.linkedin.com/in/wissem-chiha-a0264821b/
 
 - name: Moemen Smiri
-  role_en: "Electrical Engineering Senior"
-  role_fr: "Étudiant en génie électrique (finissant)"
+  role_en: "Electrical Engineering Student"
+  role_fr: "Étudiant en génie électrique"
   section: alumni
   link: https://www.linkedin.com/in/moemen-smiri-91b322248/
 
 - name: Vaibhav Satija
-  role_en: "Graduate - Software Engineering"
+  role_en: "BEng, Software Engineering"
   role_fr: "Diplômé en génie logiciel"
   section: alumni
 
 - name: Antonin Ansion
-  role_en: "Graduate - Mechanical Engineering"
+  role_en: "BEng, Mechanical Engineering"
   role_fr: "Diplômé en génie mécanique"
   section: alumni
 
 - name: Joshua Flight
-  role_en: "Graduate - Mechanical Engineering"
+  role_en: "BEng, Mechanical Engineering"
   role_fr: "Diplômé en génie mécanique"
   section: alumni

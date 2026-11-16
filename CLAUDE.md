@@ -1,75 +1,47 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+Guidance for Claude Code when working in this repository. This file is excluded from the Jekyll build (see `exclude:` in `_config.yml`), so it is not published.
 
 ## What this is
 
-A bilingual (French default / English) Jekyll site for Dynamium, a robotics research lab at
-Université de Moncton, deployed to GitHub Pages. No build tooling beyond Jekyll itself — no
-package.json, no bundler config committed (see "Running locally" below to set one up ad hoc).
+A bilingual (French default, English) Jekyll site for Dynamium, the Dynamic Systems Laboratory at Université de Moncton, published with GitHub Pages at https://www.dynamium.ca. No build tooling beyond Jekyll itself: no package.json, no committed Gemfile.
 
 ## Commands
 
-There's no committed Gemfile. To build or preview locally:
+To build or preview locally:
 
 ```
 bundle init
-bundle add jekyll
+bundle add jekyll jekyll-feed
 bundle exec jekyll serve
 ```
 
 Then open http://localhost:4000 (French) and http://localhost:4000/en/ (English).
 
-CI (`.github/workflows/jekyll.yml`) builds the site on every push/PR to `main` using the
-`jekyll/builder:latest` Docker image (`jekyll build --future`) — it only validates the build, it
-doesn't deploy. Actual publishing happens via GitHub Pages picking up `main` directly.
+CI (`.github/workflows/jekyll.yml`) builds the site on every push and pull request to `main` with the `jekyll/builder` Docker image (`jekyll build --future`). It only validates the build; GitHub Pages publishes `main` directly. There are no tests and no linter.
 
-There are no tests and no linter configured for this repo.
+## Structure
 
-## Architecture: single-page, two-language site
-
-The site was fully rewritten from the old multi-page `minima` Jekyll theme to a custom single-page
-design (see the `overhaul` commit) — there is no theme dependency left (`_sass/minima`,
-`minima.gemspec`, and the old `header.html`/`footer.html`/`home`/`page` layouts are gone). Just two
-top-level pages exist:
-
-- `index.html` (French, served at `/`)
-- `en/index.html` (English, served at `/en/`)
-
-Both use `layout: default` (`_layouts/default.html`), which has its own fully inline nav/hero/
-footer markup — no `_includes` are used at all. Research, members, and news are all rendered as
-anchor sections (`#research`, `#members`, `#news`, `#contact`) directly inside each `index.html`,
-sourced from `_data/*.yml`. **`index.html` and `en/index.html` are near-duplicates of each other**
-— the only differences are front matter (`lang`, `permalink`) and the data-field suffix used
-(`_fr`/`_en`); a content/structure change to one almost always needs the same change in the other.
+- `index.html` (French, `/`) and `en/index.html` (English, `/en/`) contain only front matter and `{% include home.html %}`.
+- `_includes/home.html` holds the whole homepage body (hero, research, members, news, contact), shared by both languages. Change it once; both pages follow.
+- `_includes/date.html` formats a date in the page language (`{% include date.html date=post.date lang=page.lang %}`), using the `months` list in `_data/strings.yml`. Do not use `date: "%b"`, which always prints English month names.
+- `_layouts/default.html` holds the header, footer, meta tags (canonical, hreflang, Open Graph) and the single `<style>` block with all CSS. Colors are CSS variables on `:root`.
+- `_layouts/post.html` renders one news post.
 
 ## Bilingual data pattern
 
-Both languages are driven by the same `_data/*.yml` files, using a field-suffix convention rather
-than separate files per language:
+Both languages are driven by the same `_data/*.yml` files, using a field-suffix convention:
 
-- `_data/members.yml` — one entry per person: `role_en`/`role_fr`, `section` (must be one of
-  `professors`, `staff_grad`, `undergrad`, `alumni` — order controlled by `members_sections` in
-  `_config.yml`), optional `tags_en`/`tags_fr`, optional `photo` (omit for an initials
-  placeholder), optional `photo_position`, optional `link`.
-- `_data/research.yml` — `title_en`/`title_fr`, `description_en`/`description_fr` per research
-  area card.
-- `_data/strings.yml` — all UI copy (nav labels, hero text, section headings, footer), keyed by
-  `en:`/`fr:` top-level blocks, accessed in templates as `site.data.strings[page.lang].xxx`.
+- `_data/members.yml`: one entry per person, `role_en`/`role_fr`, `section` (one of `professors`, `staff_grad`, `undergrad`, `alumni`, ordered by `members_sections` in `_config.yml`), optional `tags_en`/`tags_fr`, `photo`, `photo_position`, `link`.
+- `_data/research.yml`: `title_en`/`title_fr`, `description_en`/`description_fr` per research area.
+- `_data/strings.yml`: all UI copy, lab and address details, keyed by `en:`/`fr:` blocks, accessed as `site.data.strings[page.lang].xxx`.
 
-Templates pick the right field dynamically via Liquid, e.g. `area["title_" | append: page.lang]`
-— so adding a new bilingual field means adding both `_en`/`_fr` keys to the data file, no template
-branching needed as long as the existing `["field_" | append: page.lang]` pattern is followed.
+Templates select the field with `area["title_" | append: page.lang]`, so a new bilingual field only needs both `_en`/`_fr` keys.
 
-News posts follow the same "one file per language per story" convention instead: each post in
-`_posts/` has a `lang: en` or `lang: fr` front-matter field and its own permalink (e.g.
-`2025-09-15-icarm-2025.md` for English, `2025-09-15-fr-icarm-2025.md` for French); each homepage
-variant filters `site.posts` by its own `page.lang` and shows the 6 most recent.
+News posts are one file per language per story (`2025-09-15-icarm-2025.md` and `2025-09-15-fr-icarm-2025.md`), each with `lang: en` or `lang: fr` and its own permalink. Each homepage lists the 6 most recent posts in its language. An optional `image:` in front matter sets the Open Graph preview image.
 
-## Brand / style
+## Style
 
-Colors: `#02488C` (navy, used sparingly) and `#E0A725` (gold) as accents on a near-black `#0A1620`
-background. Fonts: Space Grotesk (body/headings) and IBM Plex Mono (nav, labels, mono accents),
-loaded from Google Fonts in `_layouts/default.html`. Styling on the live homepage is entirely
-inline `style=` attributes, not classes/SCSS — follow that convention when editing
-`index.html`/`en/index.html`/`_layouts/default.html` rather than introducing a new stylesheet.
+Colors: near-black navy background `#0A1620`, gold accent `#E0A725` used sparingly (buttons, links). The logo is light blue and gold on a transparent background, so the site stays on a dark background. Font: Source Sans 3 from Google Fonts.
+
+Writing: plain, factual academic tone. No em dashes, no arrows in buttons, no all-caps labels, no emoji, no marketing superlatives ("cutting-edge", "pushing the boundaries"). News posts state who, what, where, and the funding source.

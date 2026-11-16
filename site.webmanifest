@@ -1,14 +1,14 @@
 {
-    "name": "",
-    "short_name": "",
+    "name": "Dynamium, Université de Moncton",
+    "short_name": "Dynamium",
     "icons": [
         {
-            "src": "/android-chrome-192x192.png",
-            "sizes": "192x192",
+            "src": "/assets/images/logo.png",
+            "sizes": "8000x2667",
             "type": "image/png"
         }
     ],
-    "theme_color": "#ffffff",
-    "background_color": "#ffffff",
+    "theme_color": "#0A1620",
+    "background_color": "#0A1620",
     "display": "standalone"
 }

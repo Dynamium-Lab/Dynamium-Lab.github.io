@@ -5,73 +5,196 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 {% assign t = site.data.strings[page.lang] %}
 {% if page.lang == 'fr' %}{% assign home_url = '/' | relative_url %}{% else %}{% assign home_url = '/en/' | relative_url %}{% endif %}
-<title>{{ page.title }}{% if page.title %} · {% endif %}{{ site.title }}</title>
-<meta name="description" content="{{ site.description }}">
+{% if page.layout == 'post' %}{% assign page_title = page.title | append: ' | ' | append: site.title %}{% else %}{% assign page_title = site.title | append: ' | ' | append: t.lab_name %}{% endif %}
+{% assign page_desc = page.excerpt | strip_html | strip_newlines | truncate: 160 | default: t.meta_description %}
+{% if page.layout != 'post' %}{% assign page_desc = t.meta_description %}{% endif %}
+<title>{{ page_title }}</title>
+<meta name="description" content="{{ page_desc }}">
+<link rel="canonical" href="{{ page.url | absolute_url }}">
+{% unless page.layout == 'post' %}
+<link rel="alternate" hreflang="fr" href="{{ '/' | absolute_url }}">
+<link rel="alternate" hreflang="en" href="{{ '/en/' | absolute_url }}">
+<link rel="alternate" hreflang="x-default" href="{{ '/' | absolute_url }}">
+{% endunless %}
+<meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
+<meta property="og:site_name" content="{{ site.title }}">
+<meta property="og:title" content="{{ page_title }}">
+<meta property="og:description" content="{{ page_desc }}">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+<meta property="og:image" content="{{ page.image | default: '/assets/images/logo.png' | absolute_url }}">
+<meta property="og:locale" content="{% if page.lang == 'fr' %}fr_CA{% else %}en_CA{% endif %}">
+<meta name="theme-color" content="#0A1620">
+<link rel="icon" type="image/png" href="{{ '/assets/images/logo.png' | relative_url }}">
+<link rel="manifest" href="{{ '/site.webmanifest' | relative_url }}">
+{% feed_meta %}
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
-  html{scroll-behavior:smooth}
-  body{margin:0;background:#0A1620;font-family:'Space Grotesk',sans-serif}
-  a{color:#E0A725}
-  a:hover{color:#F0C05A}
-  ::selection{background:#E0A725;color:#0A1620}
-  img{max-width:100%}
-  input,textarea{outline:none}
-  input::placeholder,textarea::placeholder{color:#5C7189}
-  input:focus,textarea:focus{border-color:#E0A725 !important}
-  @media (max-width: 700px) {
-    .nav{padding:12px 20px !important}
-    .nav-links{gap:16px !important;font-size:11px !important}
-    .logo-img{height:38px !important}
-    .hero{padding:48px 22px 36px !important}
-    .hero-title{font-size:34px !important}
-    .section{padding:44px 22px !important}
-    .grid-2{grid-template-columns:1fr !important}
-    .grid-4{grid-template-columns:repeat(2,1fr) !important}
-    .news-row{flex-direction:column !important;gap:4px !important}
-    .news-date{width:auto !important}
-    .footer{padding:30px 22px 20px !important}
+  :root{
+    --bg:#0A1620; --surface:#101E2B; --surface-2:#16283A; --border:#24384B;
+    --text:#E7ECF1; --muted:#A9B6C4; --faint:#7C8CA0;
+    --accent:#E0A725; --accent-hover:#F0C05A;
+    --wrap:1120px;
   }
-  @media (max-width: 420px) {
-    .grid-4{grid-template-columns:1fr !important}
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:84px}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:'Source Sans 3',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:var(--accent)}
+  a:hover{color:var(--accent-hover)}
+  img{max-width:100%;height:auto}
+  h1,h2,h3{line-height:1.2;margin:0}
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 32px}
+
+  /* En-tête */
+  .site-header{position:sticky;top:0;z-index:20;background:rgba(10,22,32,0.96);border-bottom:1px solid var(--border);backdrop-filter:blur(6px)}
+  .site-header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:72px;flex-wrap:wrap}
+  .logo img{height:44px;width:auto;display:block}
+  .site-nav{display:flex;align-items:center;flex-wrap:wrap;gap:28px;row-gap:8px;font-size:15.5px}
+  .site-nav a{color:var(--muted);text-decoration:none}
+  .site-nav a:hover{color:var(--text)}
+  .site-nav .lang-switch{color:var(--text);border:1px solid var(--border);border-radius:4px;padding:3px 10px;font-size:14px}
+  .site-nav .lang-switch:hover{border-color:var(--accent)}
+
+  /* Sections */
+  .hero{padding:96px 0 80px;border-bottom:1px solid var(--border)}
+  .hero .affiliation{color:var(--accent);font-weight:600;font-size:15px;margin-bottom:18px}
+  .hero h1{font-size:46px;font-weight:700;max-width:820px;letter-spacing:-0.01em}
+  .hero p{margin:22px 0 0;font-size:19px;color:var(--muted);max-width:680px}
+  .hero .actions{margin-top:34px;display:flex;flex-wrap:wrap;gap:14px}
+  .btn{display:inline-block;padding:11px 22px;border-radius:4px;font-weight:600;font-size:16px;text-decoration:none;border:1px solid transparent;cursor:pointer;font-family:inherit}
+  .btn-primary{background:var(--accent);color:var(--bg)}
+  .btn-primary:hover{background:var(--accent-hover);color:var(--bg)}
+  .btn-secondary{border-color:var(--border);color:var(--text)}
+  .btn-secondary:hover{border-color:var(--muted);color:var(--text)}
+
+  .section{padding:80px 0;border-bottom:1px solid var(--border)}
+  .section:last-of-type{border-bottom:none}
+  .section h2{font-size:32px;font-weight:700;margin-bottom:12px}
+  .section .lead{color:var(--muted);max-width:680px;margin:0 0 36px}
+  .section h3.group{font-size:15px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;margin:44px 0 18px}
+  .section h3.group:first-of-type{margin-top:8px}
+
+  .research-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  .research-card{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:28px}
+  .research-card h3{font-size:20px;font-weight:600}
+  .research-card p{margin:10px 0 0;color:var(--muted);font-size:16px}
+
+  .people-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .person{background:var(--surface);border:1px solid var(--border);border-radius:6px;overflow:hidden}
+  .person .photo{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+  .person .initials{width:100%;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;background:var(--surface-2);color:var(--faint);font-size:30px;font-weight:600}
+  .person .info{padding:14px 16px 16px}
+  .person .name{font-weight:600;font-size:17px}
+  .person .name a{color:inherit;text-decoration:none}
+  .person .name a:hover{color:var(--accent)}
+  .person .role{color:var(--muted);font-size:15px;margin-top:2px}
+  .person .tags{color:var(--faint);font-size:14.5px;margin-top:8px;line-height:1.45}
+  .alumni{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(3,1fr);gap:10px 28px}
+  .alumni li{color:var(--muted);font-size:16px}
+  .alumni li span{color:var(--faint);font-size:14.5px}
+
+  .news-list{list-style:none;padding:0;margin:0}
+  .news-list li{display:flex;gap:28px;padding:16px 0;border-bottom:1px solid var(--border)}
+  .news-list li:last-child{border-bottom:none}
+  .news-list time{color:var(--faint);font-size:15px;width:150px;flex:none;padding-top:1px}
+  .news-list a{color:var(--text);text-decoration:none;font-weight:600}
+  .news-list a:hover{color:var(--accent)}
+
+  .contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:56px}
+  .contact-grid address{font-style:normal;color:var(--muted);line-height:1.7}
+  .contact-grid address strong{color:var(--text)}
+  .contact-form{display:flex;flex-direction:column;gap:14px}
+  .contact-form label{font-size:15px;color:var(--muted);display:flex;flex-direction:column;gap:6px}
+  .contact-form input,.contact-form textarea{width:100%;background:var(--surface);border:1px solid var(--border);border-radius:4px;color:var(--text);padding:11px 13px;font:inherit;font-size:16px}
+  .contact-form textarea{resize:vertical}
+  .contact-form input:focus,.contact-form textarea:focus{outline:none;border-color:var(--accent)}
+  .contact-form .btn{align-self:flex-start}
+
+  /* Articles */
+  .post{max-width:760px;margin:0 auto;padding:64px 32px 80px}
+  .post .back{font-size:15px;text-decoration:none}
+  .post time{display:block;color:var(--faint);font-size:15px;margin-top:28px}
+  .post h1{font-size:36px;font-weight:700;margin-top:8px}
+  .post-body{margin-top:28px;color:#D7DEE6}
+  .post-body h2,.post-body h3{margin:36px 0 12px;font-size:22px;color:var(--text)}
+  .post-body img{display:block;margin:28px auto;border-radius:4px}
+  .post-body iframe{max-width:100%}
+  .post-body li{margin-bottom:6px}
+
+  /* Pied de page */
+  .site-footer{background:#050D14;border-top:1px solid var(--border);padding:44px 0 28px;color:var(--faint);font-size:15px}
+  .site-footer .cols{display:flex;justify-content:space-between;flex-wrap:wrap;gap:28px}
+  .site-footer img{height:36px;width:auto;display:block;margin-bottom:12px}
+  .site-footer nav{display:flex;flex-direction:column;gap:4px}
+  .site-footer a{color:var(--faint);text-decoration:none}
+  .site-footer a:hover{color:var(--text)}
+  .site-footer .legal{margin-top:32px;padding-top:18px;border-top:1px solid var(--border);font-size:14px}
+
+  @media (max-width: 900px) {
+    .people-grid{grid-template-columns:repeat(2,1fr)}
+    .alumni{grid-template-columns:repeat(2,1fr)}
+    .contact-grid{grid-template-columns:1fr;gap:32px}
+  }
+  @media (max-width: 700px) {
+    .wrap{padding:0 20px}
+    .site-header .wrap{padding-top:10px;padding-bottom:10px}
+    .logo img{height:36px}
+    .site-nav{gap:18px;font-size:15px}
+    .hero{padding:56px 0 48px}
+    .hero h1{font-size:32px}
+    .hero p{font-size:17.5px}
+    .section{padding:56px 0}
+    .section h2{font-size:27px}
+    .research-grid{grid-template-columns:1fr}
+    .news-list li{flex-direction:column;gap:2px}
+    .news-list time{width:auto}
+    .post{padding:44px 20px 56px}
+    .post h1{font-size:28px}
+  }
+  @media (max-width: 440px) {
+    .people-grid,.alumni{grid-template-columns:1fr}
   }
 </style>
 </head>
 <body>
 
-<div style="background:#0A1620;color:#E7ECF1;font-family:'Space Grotesk',sans-serif;position:relative;min-height:100vh;">
-  <div style="position:fixed;inset:0;pointer-events:none;background-image:linear-gradient(rgba(224,167,37,0.05) 1px, transparent 1px),linear-gradient(90deg, rgba(224,167,37,0.05) 1px, transparent 1px);background-size:32px 32px;z-index:0;"></div>
-
-  <!-- NAV -->
-  <div class="nav" style="position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;row-gap:10px;padding:14px 48px;border-bottom:2px solid #E0A725;background:#0A1620;">
-    <a href="{{ home_url }}"><img src="{{ '/assets/images/logo.png' | relative_url }}" alt="{{ site.title }}" class="logo-img" style="height:50px;width:auto;display:block;"></a>
-    <div class="nav-links" style="display:flex;align-items:center;flex-wrap:wrap;gap:34px;row-gap:10px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:0.06em;color:#9FB0C2;">
-      <a href="{{ home_url }}#research" style="color:#9FB0C2;text-decoration:none;">{{ t.nav.research }}</a>
-      <a href="{{ home_url }}#members" style="color:#9FB0C2;text-decoration:none;">{{ t.nav.members }}</a>
-      <a href="{{ home_url }}#news" style="color:#9FB0C2;text-decoration:none;">{{ t.nav.news }}</a>
-      <a href="{{ home_url }}#contact" style="color:#9FB0C2;text-decoration:none;">{{ t.nav.contact }}</a>
-      <a href="{{ t.switch_url | relative_url }}" style="color:#E0A725;border:1px solid rgba(224,167,37,0.4);padding:5px 10px;text-decoration:none;">{{ t.switch_label }}</a>
-    </div>
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="{{ home_url }}"><img src="{{ '/assets/images/logo.png' | relative_url }}" alt="{{ site.title }}, {{ t.lab_name }}"></a>
+    <nav class="site-nav" aria-label="{{ t.nav_label }}">
+      <a href="{{ home_url }}#research">{{ t.nav.research }}</a>
+      <a href="{{ home_url }}#members">{{ t.nav.members }}</a>
+      <a href="{{ home_url }}#news">{{ t.nav.news }}</a>
+      <a href="{{ home_url }}#contact">{{ t.nav.contact }}</a>
+      <a class="lang-switch" href="{{ t.switch_url | relative_url }}" hreflang="{{ t.switch_hreflang }}" lang="{{ t.switch_hreflang }}">{{ t.switch_label }}</a>
+    </nav>
   </div>
+</header>
 
-  {{ content }}
+<main>
+{{ content }}
+</main>
 
-  <!-- FOOTER -->
-  <div class="footer" style="position:relative;z-index:1;background:#050D14;padding:44px 48px 30px;border-top:2px solid #E0A725;">
-    <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:20px;">
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="cols">
       <div>
-        <img src="{{ '/assets/images/logo.png' | relative_url }}" alt="{{ site.title }}" style="height:34px;width:auto;display:block;margin-bottom:10px;">
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#7C8CA0;">{{ t.footer_tagline }}</div>
+        <img src="{{ '/assets/images/logo.png' | relative_url }}" alt="{{ site.title }}">
+        <div>{{ t.lab_name }}</div>
+        <div>{{ t.department }}</div>
+        <div>{{ t.university }}</div>
       </div>
-      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#7C8CA0;line-height:1.9;">
-        <div>{{ t.nav.members }}</div><div>{{ t.nav.research }}</div><div>{{ t.nav.news }}</div>
-      </div>
+      <nav aria-label="{{ t.footer_nav_label }}">
+        <a href="{{ home_url }}#research">{{ t.nav.research }}</a>
+        <a href="{{ home_url }}#members">{{ t.nav.members }}</a>
+        <a href="{{ home_url }}#news">{{ t.nav.news }}</a>
+        <a href="{{ home_url }}#contact">{{ t.nav.contact }}</a>
+      </nav>
     </div>
-    <div style="margin-top:34px;padding-top:18px;border-top:1px solid rgba(224,167,37,0.15);font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.04em;color:#5C7189;">
-      © {{ 'now' | date: "%Y" }} {{ site.title | upcase }} — {{ t.footer_rights }}
-    </div>
+    <div class="legal">© {{ 'now' | date: "%Y" }} {{ site.title }}, {{ t.university }}</div>
   </div>
+</footer>
 
-</div>
 </body>
 </html>

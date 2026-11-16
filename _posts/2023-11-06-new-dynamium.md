@@ -1,5 +1,5 @@
 ---
-title: "Unveiling the New Dynamium — Cobots in Research"
+title: "New collaborative robots in the lab"
 date: 2023-11-06
 lang: en
 permalink: /2023/11/06/new-dynamium/
