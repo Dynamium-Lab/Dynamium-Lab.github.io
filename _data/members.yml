@@ -17,7 +17,7 @@
   section: professors
   tags_en: [Trajectory optimization, Motion planning, Human-robot cooperation]
   tags_fr: [Optimisation de trajectoire, Planification du mouvement, Coopération humain-robot]
-  photo: /assets/images/andre-gallant.png
+  photo: /assets/images/andre-gallant.jpg
   photo_position: "50% 35%"
   link: https://www.linkedin.com/in/gallantandre
 
@@ -27,7 +27,7 @@
   section: professors
   tags_en: [Kinematics of parallel manipulators, Machine dynamics]
   tags_fr: [Cinématique des manipulateurs parallèles, Dynamique des machines]
-  photo: /assets/images/marise-gallant.png
+  photo: /assets/images/marise-gallant.jpg
   photo_position: "50% 25%"
   link: https://www.umoncton.ca/umcm-ingenierie-mecanique/node/25
 
@@ -61,7 +61,7 @@
   role_en: "PhD Candidate"
   role_fr: "Étudiant au doctorat"
   section: staff_grad
-  photo: /assets/images/nikos.png
+  photo: /assets/images/nikos.jpg
   photo_position: "50% 15%"
   link: https://www.linkedin.com/in/nikos-d-016469117/
 

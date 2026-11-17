@@ -5,17 +5,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 {% assign t = site.data.strings[page.lang] %}
 {% if page.lang == 'fr' %}{% assign home_url = '/' | relative_url %}{% else %}{% assign home_url = '/en/' | relative_url %}{% endif %}
+{% assign switch_href = t.switch_url | relative_url %}
+{% assign twin = nil %}
+{% if page.layout == 'post' %}{% for p in site.posts %}{% if p.lang != page.lang and p.date == page.date %}{% assign twin = p %}{% endif %}{% endfor %}{% endif %}
+{% if twin %}{% assign switch_href = twin.url | relative_url %}{% endif %}
 {% if page.layout == 'post' %}{% assign page_title = page.title | append: ' | ' | append: site.title %}{% else %}{% assign page_title = site.title | append: ' | ' | append: t.lab_name %}{% endif %}
 {% assign page_desc = page.excerpt | strip_html | strip_newlines | truncate: 160 | default: t.meta_description %}
 {% if page.layout != 'post' %}{% assign page_desc = t.meta_description %}{% endif %}
 <title>{{ page_title }}</title>
 <meta name="description" content="{{ page_desc }}">
 <link rel="canonical" href="{{ page.url | absolute_url }}">
-{% unless page.layout == 'post' %}
+{% if page.layout == 'post' %}
+<link rel="alternate" hreflang="{{ page.lang }}" href="{{ page.url | absolute_url }}">
+{% if twin %}<link rel="alternate" hreflang="{{ twin.lang }}" href="{{ twin.url | absolute_url }}">{% endif %}
+{% else %}
 <link rel="alternate" hreflang="fr" href="{{ '/' | absolute_url }}">
 <link rel="alternate" hreflang="en" href="{{ '/en/' | absolute_url }}">
 <link rel="alternate" hreflang="x-default" href="{{ '/' | absolute_url }}">
-{% endunless %}
+{% endif %}
 <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
 <meta property="og:site_name" content="{{ site.title }}">
 <meta property="og:title" content="{{ page_title }}">
@@ -24,7 +31,10 @@
 <meta property="og:image" content="{{ page.image | default: '/assets/images/logo.png' | absolute_url }}">
 <meta property="og:locale" content="{% if page.lang == 'fr' %}fr_CA{% else %}en_CA{% endif %}">
 <meta name="theme-color" content="#0A1620">
-<link rel="icon" type="image/png" href="{{ '/assets/images/logo.png' | relative_url }}">
+<link rel="icon" href="{{ '/favicon.ico' | relative_url }}" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ '/favicon-32x32.png' | relative_url }}">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ '/favicon-16x16.png' | relative_url }}">
+<link rel="apple-touch-icon" href="{{ '/apple-touch-icon.png' | relative_url }}">
 <link rel="manifest" href="{{ '/site.webmanifest' | relative_url }}">
 {% feed_meta %}
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -153,7 +163,14 @@
     .post h1{font-size:28px}
   }
   @media (max-width: 440px) {
-    .people-grid,.alumni{grid-template-columns:1fr}
+    .people-grid{gap:12px}
+    .person .info{padding:10px 12px 12px}
+    .person .name{font-size:15.5px}
+    .person .role,.person .tags{font-size:14px}
+    .alumni{grid-template-columns:1fr}
+  }
+  @media (max-width: 330px) {
+    .people-grid{grid-template-columns:1fr}
   }
 </style>
 </head>
@@ -167,7 +184,7 @@
       <a href="{{ home_url }}#members">{{ t.nav.members }}</a>
       <a href="{{ home_url }}#news">{{ t.nav.news }}</a>
       <a href="{{ home_url }}#contact">{{ t.nav.contact }}</a>
-      <a class="lang-switch" href="{{ t.switch_url | relative_url }}" hreflang="{{ t.switch_hreflang }}" lang="{{ t.switch_hreflang }}">{{ t.switch_label }}</a>
+      <a class="lang-switch" href="{{ switch_href }}" hreflang="{{ t.switch_hreflang }}" lang="{{ t.switch_hreflang }}">{{ t.switch_label }}</a>
     </nav>
   </div>
 </header>
