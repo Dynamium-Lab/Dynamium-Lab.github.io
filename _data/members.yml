@@ -32,13 +32,30 @@
   link: https://www.umoncton.ca/umcm-ingenierie-mecanique/node/25
 
 - name: Gilde Vanel Tchane Djogdom
-  role_en: "Postdoctoral Fellow"
-  role_fr: "Stagiaire postdoctoral"
+  role_en: "Postdoctoral Fellow and Adjunct Professor"
+  role_fr: "Stagiaire postdoctoral et professeur associé"
   section: staff_grad
-  highlight: true
   photo: /assets/images/vanel.jpg
   photo_position: "50% 20%"
   link: https://www.linkedin.com/in/gilde-vanel-tchane-djogdom-a1998810b/
+
+- name: Rafael Santos Pérez
+  role_en: "Research Professional"
+  role_fr: "Professionnel de recherche"
+  section: staff_grad
+
+- name: Mohamed Sedki Limam
+  role_en: "Research Professional"
+  role_fr: "Professionnel de recherche"
+  section: staff_grad
+
+- name: Ghali Kabbaj
+  role_en: "Research Professional"
+  role_fr: "Professionnel de recherche"
+  section: staff_grad
+  photo: /assets/images/ghali.jpg
+  photo_position: "50% 20%"
+  link: https://www.linkedin.com/in/-ghali-kabbaj/
 
 - name: Nikos Doiron
   role_en: "PhD Candidate"
@@ -53,45 +70,68 @@
   role_fr: "Étudiant au doctorat"
   section: staff_grad
 
-- name: Mouad Chabba
+- name: Jonathan Dubé
+  role_en: "PhD Candidate (co-supervised)"
+  role_fr: "Étudiant au doctorat (codirection)"
+  section: staff_grad
+
+- name: Mario Dandurand
   role_en: "Master's Student"
   role_fr: "Étudiant à la maîtrise"
   section: staff_grad
-  photo: /assets/images/MouadChabba.png
-  photo_position: "50% 15%"
+
+- name: Amal Charif Compaoré
+  role_en: "Master's Student"
+  role_fr: "Étudiant à la maîtrise"
+  section: staff_grad
+
+- name: Mariem Zrigua
+  role_en: "Master's Student"
+  role_fr: "Étudiante à la maîtrise"
+  section: staff_grad
+
+- name: Siwar Laater
+  role_en: "Master's Student"
+  role_fr: "Étudiante à la maîtrise"
+  section: staff_grad
+
+- name: André Gallant
+  role_en: "Master's Student"
+  role_fr: "Étudiant à la maîtrise"
+  section: staff_grad
+
+- name: Youssef Ismail
+  role_en: "Master's Student (co-supervised with Université de Poitiers)"
+  role_fr: "Étudiant à la maîtrise (codirection avec l'Université de Poitiers)"
+  section: staff_grad
+
+- name: Ameur Sriha
+  role_en: "Master's Student (from January 2027)"
+  role_fr: "Étudiant à la maîtrise (dès janvier 2027)"
+  section: staff_grad
+
+- name: Mouad Chabba
+  role_en: "MScA, 2026"
+  role_fr: "M.Sc.A., 2026"
+  section: alumni
   link: https://www.linkedin.com/in/mouad-chabba-3161bb219/
 
 - name: Meriem Haddaji Mastouri
-  role_en: "Master's Student"
-  role_fr: "Étudiante à la maîtrise"
-  section: staff_grad
-  photo: /assets/images/meriem.png
-  photo_position: "50% 15%"
+  role_en: "MScA, 2026"
+  role_fr: "M.Sc.A., 2026"
+  section: alumni
   link: https://www.linkedin.com/in/meriem-haddaji-mastouri/
 
-- name: Mohamed Sedki Limam
-  role_en: "Master's Student"
-  role_fr: "Étudiant à la maîtrise"
-  section: staff_grad
-
 - name: Mouna Elamari
-  role_en: "Master's Student"
-  role_fr: "Étudiante à la maîtrise"
-  section: staff_grad
+  role_en: "MScA, 2026"
+  role_fr: "M.Sc.A., 2026"
+  section: alumni
   link: https://www.linkedin.com/in/mouna-el-amari-9a010518a
 
-- name: Ghali Kabbaj
-  role_en: "Mechanical Engineering Student"
-  role_fr: "Étudiant en génie mécanique"
-  section: undergrad
-  photo: /assets/images/ghali.jpg
-  photo_position: "50% 20%"
-  link: https://www.linkedin.com/in/-ghali-kabbaj/
-
-- name: Youssef Ismail
-  role_en: "Mechanical Engineering Student"
-  role_fr: "Étudiant en génie mécanique"
-  section: undergrad
+- name: Rafael Arriaga Hernández
+  role_en: "Research Intern, 2025"
+  role_fr: "Stagiaire de recherche, 2025"
+  section: alumni
 
 - name: Natanaël Jamet
   role_en: "Mechatronics Engineering Student"
