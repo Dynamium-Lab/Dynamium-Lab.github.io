@@ -16,7 +16,7 @@ bundle add jekyll jekyll-feed
 bundle exec jekyll serve
 ```
 
-Then open http://localhost:4000 (French) and http://localhost:4000/en/ (English).
+Then open http://localhost:4000 (French) and http://localhost:4000/en/ (English). On a Windows machine without Ruby, use WSL (see `README.md`). Members with no photo show initials; alumni are listed without photos.
 
 CI (`.github/workflows/jekyll.yml`) builds the site on every push and pull request to `main` with the `jekyll/builder` Docker image (`jekyll build --future`). It only validates the build; GitHub Pages publishes `main` directly. There are no tests and no linter.
 

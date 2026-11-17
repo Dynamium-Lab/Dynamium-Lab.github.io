@@ -20,6 +20,17 @@ bundle exec jekyll serve
 
 Then open http://localhost:4000 (French) and http://localhost:4000/en/ (English).
 
+On Windows without Ruby, the same works inside WSL (Ubuntu):
+
+```
+sudo apt install -y ruby-full build-essential
+gem install --user-install bundler jekyll jekyll-feed
+cd /mnt/c/work/code/dynamium-site
+~/.local/share/gem/ruby/*/bin/jekyll serve
+```
+
+GitHub Pages has no per-branch preview: the live site changes only when a pull request is merged into `main`.
+
 ## Publishing
 
 Merge into `main`. GitHub Pages rebuilds the site within a minute or two. The CI workflow builds every pull request to catch Liquid or YAML errors before merging.
