@@ -1,25 +1,21 @@
-# Each entry becomes one card in the Research Areas section, in both languages.
+# Each entry becomes one card in the Research areas section, in both languages.
 
-- number: "01"
-  title_en: "Trajectory Optimization & Motion Planning"
+- title_en: "Trajectory optimization and motion planning"
   title_fr: "Optimisation de trajectoire et planification du mouvement"
-  description_en: "Planning and optimizing manipulator motion — from redundant arms to collision-aware trajectories."
-  description_fr: "Planification et optimisation du mouvement des manipulateurs — des bras redondants aux trajectoires évitant les collisions."
+  description_en: "Time-optimal trajectories for serial manipulators, including redundant arms, payload limits and collision avoidance."
+  description_fr: "Trajectoires optimales en temps pour les manipulateurs sériels, y compris les bras redondants, les limites de charge utile et l'évitement de collisions."
 
-- number: "02"
-  title_en: "Physical Human-Robot Interaction"
+- title_en: "Physical human-robot interaction"
   title_fr: "Interaction physique humain-robot"
-  description_en: "Collaborative robots and cobots working safely and productively alongside people."
-  description_fr: "Des robots collaboratifs qui travaillent de façon sécuritaire et productive aux côtés des humains."
+  description_en: "Collaborative robots that share a workspace and tasks with people, including dynamic identification of the robot and its payload."
+  description_fr: "Robots collaboratifs qui partagent l'espace et les tâches avec des personnes, y compris l'identification dynamique du robot et de sa charge."
 
-- number: "03"
-  title_en: "Kinematics & Dynamics of Parallel Manipulators"
+- title_en: "Kinematics and dynamics of parallel manipulators"
   title_fr: "Cinématique et dynamique des manipulateurs parallèles"
-  description_en: "Synthesis and analysis of parallel-manipulator architectures, including kinematic redundancy."
-  description_fr: "Synthèse et analyse d'architectures de manipulateurs parallèles, incluant la redondance cinématique."
+  description_en: "Synthesis and analysis of parallel manipulator architectures, including kinematic redundancy."
+  description_fr: "Synthèse et analyse d'architectures de manipulateurs parallèles, y compris la redondance cinématique."
 
-- number: "04"
-  title_en: "Ergonomics & Biomechanics"
+- title_en: "Ergonomics and biomechanics"
   title_fr: "Ergonomie et biomécanique"
-  description_en: "Studying musculoskeletal disorders and human upper-limb movement to inform safer work systems."
-  description_fr: "Étude des maladies musculosquelettiques et du mouvement des membres supérieurs humains, pour des méthodes de travail plus sécuritaires."
+  description_en: "Upper-limb movement and musculoskeletal disorders, to design safer workstations and human-robot tasks."
+  description_fr: "Mouvement du membre supérieur et troubles musculosquelettiques, pour concevoir des postes de travail et des tâches humain-robot plus sûrs."

@@ -1,0 +1,9 @@
+{%- assign d = include.date -%}
+{%- assign m = d | date: "%-m" | minus: 1 -%}
+{%- assign day = d | date: "%-d" -%}
+{%- assign months = site.data.strings[include.lang].months -%}
+{%- if include.lang == 'fr' -%}
+{{ day }}{% if day == "1" %}<sup>er</sup>{% endif %} {{ months[m] }} {{ d | date: "%Y" }}
+{%- else -%}
+{{ months[m] }} {{ day }}, {{ d | date: "%Y" }}
+{%- endif -%}

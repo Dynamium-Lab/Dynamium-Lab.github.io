@@ -1,25 +1,14 @@
 ---
 layout: default
+lang: fr
+title: Page introuvable
+permalink: /404.html
 ---
 
-<style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
-
-<div class="container">
-  <h1>404</h1>
-
-  <p><strong>Page not found :( Page non trouvée</strong></p>
-  <p>Cette page n'a pas été trouvée.</p>
-  <p>The requested page could not be found.</p>
-</div>
+<section class="section">
+  <div class="wrap" style="text-align:center;max-width:640px;">
+    <h1 style="font-size:56px;">404</h1>
+    <p style="color:var(--muted);">Cette page est introuvable. <a href="{{ '/' | relative_url }}">Retour à l'accueil</a></p>
+    <p style="color:var(--muted);" lang="en">This page could not be found. <a href="{{ '/en/' | relative_url }}">Back to the home page</a></p>
+  </div>
+</section>

@@ -7,7 +7,7 @@ permalink: /fr/2024/02/14/dynamapp/
 
 ### Notre Aventure dans l'Identification Dynamique des Robots Collaboratifs
 
-Bonjour, Dynamium! Aujourd'hui, nous sommes ravi de partager avec vous une nouvelle excitante : notre projet est devenu une réalité grâce à un financement généreux de la part de la FINB, de l'Université de Moncton et de l'APÉCA. Oui, vous avez bien entendu, nous avons convaincu de vrais humains de financer nos amis robots!
+Bonjour, Dynamium! Aujourd'hui, nous sommes ravis de partager avec vous une nouvelle excitante : notre projet est devenu une réalité grâce à un financement généreux de la part de la FINB, de l'Université de Moncton et de l'APÉCA. Oui, vous avez bien entendu, nous avons convaincu de vrais humains de financer nos amis robots!
 
 Notre mission? Rendre les robots collaboratifs assez intelligents pour comprendre non seulement ce qu'ils font, mais aussi avec quoi ils le font. En d'autres termes, nous leur apprenons à reconnaître le modèle dynamique de leur charge. C'est comme apprendre à un enfant à ne pas seulement reconnaître qu'il porte un sac, mais aussi à comprendre s'il contient des livres ou des bonbons (surtout des bonbons).
 
@@ -28,7 +28,7 @@ Merci de nous avoir lu! Nous sommes impatients de construire un avenir où les r
 ### Un Mot de Remerciement
 
 <div align="center">
-    <img src="/assets/images/230215-partners_fr.png" alt="Paretenaires en or !">
+    <img src="/assets/images/230215-partners_fr.png" alt="Logos de la FINB, de l'Université de Moncton et de l'APÉCA">
 </div>
 
 Nous voudrions exprimer notre gratitude infinie envers la FINB, l'Université de Moncton et l'APÉCA. Sans leur soutien, nos robots seraient probablement toujours en train d'essayer de comprendre la différence entre un marteau et un tournevis.
